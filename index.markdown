@@ -15,6 +15,10 @@ title: Miika Kanerva
     been making games since 2015, co-founded Improx Games in 2016, and have
     been one of the owners of indie studio Mopeful Games since 2021.
   </p>
+
+  <p>
+    Contact: maikkanerva@gmail.com
+  </p>
 </section>
 
 <section class="project-section" aria-labelledby="featured-projects">
