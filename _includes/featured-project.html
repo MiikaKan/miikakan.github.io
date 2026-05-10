@@ -1,18 +1,19 @@
 {% assign project = include.project %}
+{% assign primary_link = project.links | first %}
 
+{% if primary_link.url %}
+<a class="project-case-study project-card-clickable" href="{{ primary_link.url }}" target="_blank" rel="noopener" aria-label="Open {{ project.title }}">
+{% else %}
 <article class="project-case-study">
-  {% if project.image %}
-    <img class="project-media" src="{{ project.image | relative_url }}" alt="{{ project.image_alt | default: project.title }}">
-  {% else %}
-    <div class="project-media project-media-placeholder" aria-label="Image placeholder for {{ project.title }}">
-      <span>{{ project.image_label | default: "Project image or trailer still" }}</span>
-    </div>
-  {% endif %}
-
-  <div class="project-content">
-    <div class="project-kicker">{{ project.kicker }}</div>
-    <h3>{{ project.title }}</h3>
-    <p class="project-summary">{{ project.summary }}</p>
+{% endif %}
+  <div class="project-visual">
+    {% if project.image %}
+      <img class="project-media" src="{{ project.image | relative_url }}" alt="{{ project.image_alt | default: project.title }}">
+    {% else %}
+      <div class="project-media project-media-placeholder" aria-label="Image placeholder for {{ project.title }}">
+        <span>{{ project.image_label | default: "Project image or trailer still" }}</span>
+      </div>
+    {% endif %}
 
     <dl class="project-meta">
       <div>
@@ -24,10 +25,16 @@
         <dd>{{ project.engine }}</dd>
       </div>
       <div>
-        <dt>Project Type</dt>
-        <dd>{{ project.type }}</dd>
+        <dt>Platforms</dt>
+        <dd>{{ project.platforms | default: project.type }}</dd>
       </div>
     </dl>
+  </div>
+
+  <div class="project-content">
+    <div class="project-kicker">{{ project.kicker }}</div>
+    <h3>{{ project.title }}</h3>
+    <p class="project-summary">{{ project.summary }}</p>
 
     <div class="project-highlights" aria-label="{{ project.title }} contribution highlights">
       {% for highlight in project.highlights %}
@@ -37,13 +44,9 @@
         </div>
       {% endfor %}
     </div>
-
-    {% if project.links %}
-      <div class="project-links" aria-label="{{ project.title }} links">
-        {% for link in project.links %}
-          <a href="{{ link.url }}">{{ link.label }}</a>
-        {% endfor %}
-      </div>
-    {% endif %}
   </div>
+{% if primary_link.url %}
+</a>
+{% else %}
 </article>
+{% endif %}
