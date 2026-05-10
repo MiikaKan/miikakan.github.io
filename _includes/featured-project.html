@@ -1,0 +1,49 @@
+{% assign project = include.project %}
+
+<article class="project-case-study">
+  {% if project.image %}
+    <img class="project-media" src="{{ project.image | relative_url }}" alt="{{ project.image_alt | default: project.title }}">
+  {% else %}
+    <div class="project-media project-media-placeholder" aria-label="Image placeholder for {{ project.title }}">
+      <span>{{ project.image_label | default: "Project image or trailer still" }}</span>
+    </div>
+  {% endif %}
+
+  <div class="project-content">
+    <div class="project-kicker">{{ project.kicker }}</div>
+    <h3>{{ project.title }}</h3>
+    <p class="project-summary">{{ project.summary }}</p>
+
+    <dl class="project-meta">
+      <div>
+        <dt>Role</dt>
+        <dd>{{ project.role }}</dd>
+      </div>
+      <div>
+        <dt>Engine</dt>
+        <dd>{{ project.engine }}</dd>
+      </div>
+      <div>
+        <dt>Project Type</dt>
+        <dd>{{ project.type }}</dd>
+      </div>
+    </dl>
+
+    <div class="project-highlights" aria-label="{{ project.title }} contribution highlights">
+      {% for highlight in project.highlights %}
+        <div>
+          <h4>{{ highlight.title }}</h4>
+          <p>{{ highlight.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if project.links %}
+      <div class="project-links" aria-label="{{ project.title }} links">
+        {% for link in project.links %}
+          <a href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</article>
