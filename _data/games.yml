@@ -102,13 +102,6 @@ jams:
     links:
         - label: "Play"
           url: "https://improx.itch.io/god-of-wifi"
-  - title: "Trump Clicker"
-    kicker: "Game jam / Unity C#"
-    description: "An idle clicker game made for Ludum Dare 39. I was one of the programmers in the team."
-    image: "https://img.itch.zone/aW1hZ2UvMTY0MTkxLzc1NjIxNy5wbmc=/315x250%23c/6idwuT.png"
-    links:
-      - label: "Play"
-        url: "https://improx.itch.io/trump-clicker-ld39"
   - title: "Hand of God"
     kicker: "Game jam"
     description: "A VR game made for the Junction 2016 hackathon. I was one of the programmers in the team."
