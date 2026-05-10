@@ -6,11 +6,14 @@ layout: default
 title: Miika Kanerva
 ---
 
-<section class="project-section" aria-labelledby="featured-projects">
-  <h2 id="featured-projects">About</h2>
+<section class="project-section" aria-labelledby="about">
+  <h2 id="about">About</h2>
 
   <p>
-    Unity developer based in Espoo, Finland. I've been programming and working on games since 2015, and am one of the co-founders of Improx Games founded in 2016. I'm also one of the owners of an indie studio Mopeful Games since 2021.
+    Unity developer based in Espoo, Finland, focused on gameplay systems,
+    technical implementation, and shipping games across PC and consoles. I have
+    been making games since 2015, co-founded Improx Games in 2016, and have
+    been one of the owners of indie studio Mopeful Games since 2021.
   </p>
 </section>
 
